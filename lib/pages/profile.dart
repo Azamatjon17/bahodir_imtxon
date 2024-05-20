@@ -1,3 +1,4 @@
+import 'package:examui/visa_payment.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -34,17 +35,11 @@ class Profile extends StatelessWidget {
                     Gap(12),
                     Text(
                       "Mansurul Hoque",
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w500,
-                          color: Color(0xff101817)),
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500, color: Color(0xff101817)),
                     ),
                     Text(
                       "mansurul952@gmail.com",
-                      style: TextStyle(
-                          fontSize: 14,
-                          fontWeight: FontWeight.w400,
-                          color: Color(0xff828A89)),
+                      style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400, color: Color(0xff828A89)),
                     ),
                   ],
                 ),
@@ -59,9 +54,7 @@ class Profile extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.fromLTRB(10, 16, 10, 16),
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(14), color: Colors.white),
                         child: const Row(
                           children: [
                             Icon(
@@ -72,21 +65,20 @@ class Profile extends StatelessWidget {
                             Gap(12),
                             Text(
                               "Profile",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                             )
                           ],
                         ),
                       ),
                     ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (ctx) => VisaPayment()));
+                      },
                       child: Container(
                         padding: const EdgeInsets.fromLTRB(10, 16, 10, 16),
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(14), color: Colors.white),
                         child: const Row(
                           children: [
                             Icon(
@@ -97,8 +89,7 @@ class Profile extends StatelessWidget {
                             Gap(12),
                             Text(
                               "Payment Methods",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                             )
                           ],
                         ),
@@ -109,9 +100,7 @@ class Profile extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.fromLTRB(10, 16, 10, 16),
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(14), color: Colors.white),
                         child: const Row(
                           children: [
                             Icon(
@@ -122,8 +111,7 @@ class Profile extends StatelessWidget {
                             Gap(12),
                             Text(
                               "Order history",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                             )
                           ],
                         ),
@@ -134,9 +122,7 @@ class Profile extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.fromLTRB(10, 16, 10, 16),
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(14), color: Colors.white),
                         child: const Row(
                           children: [
                             Icon(
@@ -147,8 +133,7 @@ class Profile extends StatelessWidget {
                             Gap(12),
                             Text(
                               "Delivery Address",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                             )
                           ],
                         ),
@@ -159,9 +144,7 @@ class Profile extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.fromLTRB(10, 16, 10, 16),
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(14), color: Colors.white),
                         child: const Row(
                           children: [
                             Icon(
@@ -172,8 +155,7 @@ class Profile extends StatelessWidget {
                             Gap(12),
                             Text(
                               "Support Center",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                             )
                           ],
                         ),
@@ -184,9 +166,7 @@ class Profile extends StatelessWidget {
                       child: Container(
                         padding: const EdgeInsets.fromLTRB(10, 16, 10, 16),
                         width: double.infinity,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(14),
-                            color: Colors.white),
+                        decoration: BoxDecoration(borderRadius: BorderRadius.circular(14), color: Colors.white),
                         child: const Row(
                           children: [
                             Icon(
@@ -197,8 +177,7 @@ class Profile extends StatelessWidget {
                             Gap(12),
                             Text(
                               "Legal Policy ",
-                              style: TextStyle(
-                                  fontSize: 16, fontWeight: FontWeight.w500),
+                              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                             )
                           ],
                         ),
@@ -210,10 +189,7 @@ class Profile extends StatelessWidget {
               const Gap(60),
               const Text(
                 "Log Out",
-                style: TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.red),
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.red),
               ),
               Gap(20)
             ],

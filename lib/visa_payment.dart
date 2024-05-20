@@ -6,6 +6,7 @@ class VisaPayment extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffF9F9F9),
       appBar: AppBar(
         title: const Text(
           "Payment",
@@ -42,10 +43,7 @@ class VisaPayment extends StatelessWidget {
                     children: [
                       const Text(
                         "Mansurul hoque",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 18,
-                            fontWeight: FontWeight.w400),
+                        style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.w400),
                       ),
                       Container(
                         width: 40,
@@ -168,9 +166,35 @@ class VisaPayment extends StatelessWidget {
                       fontSize: 12,
                       fontWeight: FontWeight.w300,
                     )),
-                ImortantButtons("Apply", () {})
+                SizedBox(height: 40, width: 100, child: ImortantButtons("Apply", () {}))
               ],
-            )
+            ),
+            Spacer(),
+            Container(
+                padding: EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+                width: double.infinity,
+                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.only(topLeft: Radius.circular(20), topRight: Radius.circular(20))),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                      const  Text("Totalpayment",
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w500,
+                            )),
+                        Text(
+                          "\$84.680",
+                          style: TextStyle(fontSize: 20, color: Colors.yellow.shade900, fontWeight: FontWeight.w500),
+                        )
+                      ],
+                    ),
+                    Gap(35),
+                    ImortantButtons("payment", () {})
+                  ],
+                ))
           ],
         ),
       ),

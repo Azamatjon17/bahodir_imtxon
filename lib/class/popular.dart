@@ -31,11 +31,7 @@ class Popular extends StatelessWidget {
                 name,
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
               ),
-              Text(type,
-                  style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400)),
+              Text(type, style: const TextStyle(color: Colors.grey, fontSize: 15, fontWeight: FontWeight.w400)),
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Text(
@@ -54,49 +50,3 @@ class Popular extends StatelessWidget {
     );
   }
 }
-/*   Container(
-        padding: EdgeInsets.symmetric(horizontal: 20),
-        width: 240,
-        height: 270,
-        child: Image.asset("images/afterlogin/$image.png"),
-      ),
-      Padding(
-        padding: EdgeInsets.only(left: 24),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(name),
-                Text(
-                  type,
-                  style: const TextStyle(color: Colors.grey),
-                )
-              ],
-            ),
-            const Gap(30),
-            Container(
-              padding: EdgeInsets.all(7),
-              decoration: const BoxDecoration(
-                shape: BoxShape.circle,
-                color: Color(0xFF0c8a7b),
-              ),
-              child: Image.asset(
-                "images/afterlogin/savat.png",
-                scale: 1.2,
-                // fit: BoxFit.cover,
-              ),
-            )
-          ],
-        ),
-      ),
-      Text(
-        price,
-        style: const TextStyle(
-          color: Color(0xFFf2a666),
-          fontSize: 20,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
-    */

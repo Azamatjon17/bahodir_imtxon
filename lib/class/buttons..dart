@@ -10,13 +10,13 @@ class ImortantButtons extends StatefulWidget {
 }
 
 class _ImortantButtonsState extends State<ImortantButtons> {
-
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       child: ElevatedButton(
         style: ButtonStyle(
+          padding: WidgetStatePropertyAll(EdgeInsets.all(20)),
           shape: WidgetStateProperty.all(
             RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10.0),
