@@ -133,10 +133,10 @@ class _LoginPage extends State<LoginPage> {
                   () {
                     if (emailCheck.text.trim().isEmpty || passwordCheck.text.trim().isEmpty) {
                       if (emailCheck.text.trim().isEmpty) {
-                        emailCheck.text = "enter valid email";
+                        emailCheck.text = "Enter Valid Email";
                       }
                       if (passwordCheck.text.trim().isEmpty) {
-                        passwordCheck.text = "enter vaild password";
+                        passwordCheck.text = "Enter Vaild Password";
                       }
                     } else {
                       if (checkuser(emailCheck.text, passwordCheck.text)) {
@@ -179,7 +179,33 @@ class _LoginPage extends State<LoginPage> {
                           },
                         );
                       } else {
-                        // showModalBottomSheet(context: context, builder: builder)
+                        showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return AlertDialog(
+                              contentPadding: const EdgeInsets.all(20),
+                              content: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.dangerous_sharp,
+                                    color: Colors.red,
+                                    size: 30,
+                                  ),
+                                  const SizedBox(height: 5),
+                                  const Text(
+                                    "User Not Found\nTry Again",
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            );
+                          },
+                        );
                       }
                     }
                     setState(() {});

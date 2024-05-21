@@ -2,6 +2,7 @@ import 'package:examui/after_logged.dart';
 import 'package:examui/class/buttons..dart';
 import 'package:examui/class/delivery.dart';
 import 'package:examui/models/product.dart';
+import 'package:examui/pages/checkout.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -112,7 +113,7 @@ class _CardsState extends State<Cards> {
                   ImortantButtons("Check Out", () {
                     showModalBottomSheet(
                       context: context,
-                      builder: (context) => SuccessPay(),
+                      builder: (context) => Checkout(),
                     );
                   })
                 ],

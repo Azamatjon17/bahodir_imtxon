@@ -1,5 +1,6 @@
 import 'package:examui/class/database.dart';
 import 'package:examui/login_page.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 class Register extends StatefulWidget {
@@ -124,13 +125,22 @@ class _RegisterState extends State<Register> {
                 child: Column(
                   children: [
                     RichText(
-                      text: const TextSpan(
+                      text: TextSpan(
                         children: [
                           TextSpan(
                             text: "Do you have an account?",
                             style: TextStyle(color: Colors.grey),
                           ),
                           TextSpan(
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LoginPage(),
+                                  ),
+                                );
+                              },
                             text: " Sign in here",
                             style: TextStyle(
                               decoration: TextDecoration.underline,
@@ -151,28 +161,17 @@ class _RegisterState extends State<Register> {
                       ),
                       onPressed: () {
                         setState(() {
-                          nameError = nameController.text.isEmpty
-                              ? "Enter your name"
-                              : null;
-                          emailError = emailController.text.isEmpty ||
-                                  !emailController.text.contains('@')
-                              ? "Enter a valid email"
-                              : null;
-                          passwordError1 = passwordController1.text.isEmpty
-                              ? "Enter a password"
-                              : null;
+                          nameError = nameController.text.isEmpty ? "Enter your name" : null;
+                          emailError = emailController.text.isEmpty || !emailController.text.contains('@') ? "Enter a valid email" : null;
+                          passwordError1 = passwordController1.text.isEmpty ? "Enter a password" : null;
                           passwordError2 = passwordController2.text.isEmpty
                               ? "Re-enter your password"
-                              : passwordController1.text !=
-                                      passwordController2.text
+                              : passwordController1.text != passwordController2.text
                                   ? "Passwords do not match"
                                   : null;
                         });
 
-                        if (nameError == null &&
-                            emailError == null &&
-                            passwordError1 == null &&
-                            passwordError2 == null) {
+                        if (nameError == null && emailError == null && passwordError1 == null && passwordError2 == null) {
                           // Registration successful
                           Database.user.add({
                             "name": nameController.text,
