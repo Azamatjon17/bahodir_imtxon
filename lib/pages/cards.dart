@@ -111,10 +111,11 @@ class _CardsState extends State<Cards> {
                   ),
                   Gap(10),
                   ImortantButtons("Check Out", () {
-                    showModalBottomSheet(
-                      context: context,
-                      builder: (context) => Checkout(),
-                    );
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (ctx) => Checkout(),
+                        ));
                   })
                 ],
               ))
