@@ -20,11 +20,11 @@ class _AfterLoggedState extends State<AfterLogged> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xffF9F9F9),
       body: pages[selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: (value) {
-        
           selectedIndex = value;
           setState(() {});
         },

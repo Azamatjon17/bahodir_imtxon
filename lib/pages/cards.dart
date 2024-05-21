@@ -18,11 +18,26 @@ class _CardsState extends State<Cards> {
     return Scaffold(
       backgroundColor: const Color(0xffF9F9F9),
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AfterLogged()));
+            },
+            icon: Icon(
+              Icons.arrow_left,
+            )),
         title: const Text(
           "Shopping",
           style: TextStyle(fontSize: 25),
         ),
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.delete))],
+        actions: [
+          IconButton(
+              onPressed: () {
+                SingleProducts.card.clear();
+                setState(() {});
+              },
+              icon: Icon(Icons.delete))
+        ],
       ),
       body: Column(
         children: [

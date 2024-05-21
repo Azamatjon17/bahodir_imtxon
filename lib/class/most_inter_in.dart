@@ -75,7 +75,7 @@ class _MostInInsideState extends State<MostInInside> {
                         ),
                       ),
                       const Gap(30),
-                      Text(widget.product.price,
+                      Text('\$${widget.product.price}',
                           style: TextStyle(
                             color: Color(0xFFf2a666),
                             fontSize: 25,

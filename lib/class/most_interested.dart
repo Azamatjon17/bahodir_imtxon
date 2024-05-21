@@ -32,10 +32,7 @@ class MostInterested extends StatelessWidget {
                 ),
                 Text(
                   product.type,
-                  style: const TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                      fontWeight: FontWeight.w400),
+                  style: const TextStyle(color: Colors.grey, fontSize: 16, fontWeight: FontWeight.w400),
                 )
               ],
             ),
@@ -58,7 +55,7 @@ class MostInterested extends StatelessWidget {
       Padding(
         padding: const EdgeInsets.all(20),
         child: Text(
-          product.price,
+          "\$${product.price}",
           style: const TextStyle(
             color: Color(0xFFf2a666),
             fontSize: 20,
