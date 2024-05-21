@@ -1,3 +1,4 @@
+import 'package:examui/after_logged.dart';
 import 'package:examui/class/buttons..dart';
 import 'package:examui/class/database.dart';
 import 'package:examui/create_accaunt.dart';
@@ -64,9 +65,7 @@ class _LoginPage extends State<LoginPage> {
                         color: Colors.grey,
                       ),
                       fillColor: Colors.white,
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          borderSide: BorderSide.none)),
+                      border: OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20)), borderSide: BorderSide.none)),
                 ),
                 const SizedBox(
                   height: 15,
@@ -90,14 +89,10 @@ class _LoginPage extends State<LoginPage> {
                             setState(() {});
                           },
                           icon: Icon(
-                            isHiddein == true
-                                ? Icons.visibility
-                                : Icons.visibility_off,
+                            isHiddein == true ? Icons.visibility : Icons.visibility_off,
                             color: Colors.grey,
                           )),
-                      border: const OutlineInputBorder(
-                          borderRadius: BorderRadius.all(Radius.circular(20)),
-                          borderSide: BorderSide.none)),
+                      border: const OutlineInputBorder(borderRadius: BorderRadius.all(Radius.circular(20)), borderSide: BorderSide.none)),
                 ),
                 const SizedBox(
                   height: 25,
@@ -136,8 +131,7 @@ class _LoginPage extends State<LoginPage> {
                 ImortantButtons(
                   "=",
                   () {
-                    if (emailCheck.text.trim().isEmpty ||
-                        passwordCheck.text.trim().isEmpty) {
+                    if (emailCheck.text.trim().isEmpty || passwordCheck.text.trim().isEmpty) {
                       if (emailCheck.text.trim().isEmpty) {
                         emailCheck.text = "enter valid email";
                       }
@@ -174,7 +168,7 @@ class _LoginPage extends State<LoginPage> {
                                   onPressed: () {
                                     Navigator.of(context).pushReplacement(
                                       MaterialPageRoute(
-                                        builder: (context) => (MainPage()),
+                                        builder: (context) => (AfterLogged()),
                                       ),
                                     );
                                   },
@@ -205,8 +199,7 @@ class _LoginPage extends State<LoginPage> {
                       ),
                       const Text(
                         "Sign In With Google",
-                        style: TextStyle(
-                            fontSize: 16, fontWeight: FontWeight.w500),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                       )
                     ],
                   ),
@@ -253,8 +246,7 @@ bool checkuser(String email, String password) {
   print(Database.user);
 
   for (var i = 0; i < Database.user.length; i++) {
-    if (email == Database.user[i]["email"] &&
-        password == Database.user[i]["password"]) {
+    if (email == Database.user[i]["email"] && password == Database.user[i]["password"]) {
       return true;
     }
   }

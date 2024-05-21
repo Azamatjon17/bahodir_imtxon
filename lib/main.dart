@@ -12,6 +12,6 @@ void main(List<String> args) {
 class MyProject extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false, home: Checkout());
+    return MaterialApp(debugShowCheckedModeBanner: false, home: MainPage());
   }
 }

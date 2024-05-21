@@ -1,3 +1,5 @@
+import 'package:examui/after_logged.dart';
+import 'package:examui/class/buttons..dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -15,8 +17,7 @@ class Delivery extends StatefulWidget {
 class _Delivery extends State<Delivery> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        home: Scaffold(
+    return Scaffold(
       backgroundColor: const Color(0xffF9F9F9),
       body: Expanded(
         child: Stack(
@@ -27,14 +28,10 @@ class _Delivery extends State<Delivery> {
                   height: MediaQuery.of(context).size.height / 1.7,
                   width: double.infinity,
                   child: Image.asset(
-                    "assets/images/map.png",
+                    "images/map.png",
                     fit: BoxFit.cover,
                   ),
                 )),
-            Align(
-              alignment: const Alignment(1, -0.5),
-              child: Image.asset("assets/images/loc.png"),
-            ),
             Positioned(
               top: 40,
               child: Row(
@@ -68,14 +65,20 @@ class _Delivery extends State<Delivery> {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const Row(
+                          Row(
                             children: [
-                              CircleAvatar(
-                                radius: 35,
-                                backgroundImage: AssetImage("assets/images/person.jpeg"),
+                              Container(
+                                clipBehavior: Clip.hardEdge,
+                                width: 60,
+                                height: 60,
+                                decoration: BoxDecoration(shape: BoxShape.circle),
+                                child: Image.asset(
+                                  "images/person3.png",
+                                  fit: BoxFit.cover,
+                                ),
                               ),
-                              Gap(10),
-                              Column(
+                              const Gap(10),
+                              const Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Text(
@@ -160,24 +163,15 @@ class _Delivery extends State<Delivery> {
                           )
                         ],
                       ),
-                      InkWell(
-                        child: Container(
-                          alignment: Alignment.center,
-                          height: 56,
-                          width: double.infinity,
-                          decoration: BoxDecoration(borderRadius: BorderRadius.circular(14), color: const Color(0xff0C8A7B)),
-                          child: const Text(
-                            "Order Received",
-                            style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600, color: Colors.white),
-                          ),
-                        ),
-                      )
+                      ImortantButtons("Order Received", () {
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx) => AfterLogged()));
+                      })
                     ],
                   ),
                 )),
           ],
         ),
       ),
-    ));
+    );
   }
 }
