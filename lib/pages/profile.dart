@@ -1,3 +1,4 @@
+import 'package:examui/login_page.dart';
 import 'package:examui/visa_payment.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -186,11 +187,14 @@ class Profile extends StatelessWidget {
                   ],
                 ),
               ),
-              const Gap(60),
-              const Text(
-                "Log Out",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.red),
-              ),
+              TextButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx) => LoginPage()));
+                  },
+                  child: const Text(
+                    "Log Out",
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.red),
+                  )),
               Gap(20)
             ],
           ),
