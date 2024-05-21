@@ -1,3 +1,4 @@
+import 'package:examui/after_logged.dart';
 import 'package:examui/models/product.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -18,11 +19,30 @@ class _FavouriteState extends State<Favourite> {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.topCenter,
-      padding: const EdgeInsets.only(top: 50, left: 20, right: 20),
-      child: Wrap(
-        runSpacing: 10,
-        spacing: 10,
-        children: [for (int i = 0; i < SingleProducts.products.length; i++) SingleProducts.products[i].islike ? Container(decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)), width: MediaQuery.of(context).size.width / 2 - 40, child: MostInterested(SingleProducts.products[i], islikefalse)) : Text("")],
+      padding: const EdgeInsets.only(left: 20, right: 20),
+      child: Column(
+        children: [
+          AppBar(
+            title: Text(
+              "Favourite",
+              style: TextStyle(fontWeight: FontWeight.w500, fontSize: 25),
+            ),
+            centerTitle: true,
+            leading: IconButton(
+                onPressed: () {
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx) => AfterLogged()));
+                },
+                icon: Icon(Icons.arrow_back)),
+            actions: [IconButton(onPressed: () {}, icon: Icon(Icons.favorite_border))],
+          ),
+          Expanded(
+            child: Wrap(
+              runSpacing: 10,
+              spacing: 10,
+              children: [for (int i = 0; i < SingleProducts.products.length; i++) SingleProducts.products[i].islike ? Container(decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(20)), width: MediaQuery.of(context).size.width / 2 - 40, child: MostInterested(SingleProducts.products[i], islikefalse)) : Text("")],
+            ),
+          ),
+        ],
       ),
     );
   }

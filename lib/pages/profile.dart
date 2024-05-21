@@ -30,7 +30,7 @@ class Profile extends StatelessWidget {
                     Gap(24),
                     CircleAvatar(
                       radius: 40,
-                      backgroundImage: AssetImage("assets/images/person.jpeg"),
+                      backgroundImage: AssetImage("images/person3.png"),
                     ),
                     Gap(12),
                     Text(
