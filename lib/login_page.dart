@@ -120,8 +120,10 @@ class _LoginPage extends State<LoginPage> {
                         )
                       ],
                     ),
-                    const Text(
-                      "Forgot password?",
+                    Expanded(
+                      child: const Text(
+                        "Forgot password?",
+                      ),
                     ),
                   ],
                 ),
